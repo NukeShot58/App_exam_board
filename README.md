@@ -1,9 +1,6 @@
 # What is this?
 This is an app that has been requested by the school to track the exam board.
-# Table of Content:
-- - 
-
-## 1.Requirements:
+## Requirements:
 - wyznaczać komisje do egzaminów
 - na pewno dane nauczyciela(imie, nazwisko, nrTel, nauPrzed)
 - wyznacz automatyczne równomiernie nauczycieli z naszej szkoły od komisji
@@ -21,14 +18,14 @@ This is an app that has been requested by the school to track the exam board.
 - jak program wylosuje nauczyciela wchodzimy w edycję egzaminu i dopisujemy ręcznie nauczyciela z zewnątrz; zaznaczamy czy to członek czy egzaminator [Jeżeli brak listy z zewnątrz]
 - w egzaminach pisemnych jest operator(operator wiele sal na raz)
 - w egzaminach praktycznych asystent techniczny na całą sesję
-### 1.1.II możliwość
+### II możliwość
 - wprowadzamy tylko ilość egzaminów konkretnego typu
 - program przydziela tylko nauczycieli z naszej szkoły reszta ręcznie(program tworzy komisję)
 
 - wygenerowany plik pdf z pólą komisji
 
-## 2.In short:
-### 2.1.Tables:
+## In short:
+### Tables:
 - egzamin (egzaminID; dataGodzzina [datetime not null]; sala; kwalyfikacja; typ [w, wk, d, dk]; techNauID)[Ręcznie edytowane],
 - nauczyciela(nauczycielID; imie; nazwisko; nrTel; nauPrzed)[dane podane],
 - przedmioty(nazwaPrzed(ID); Zawodowy [string])[dane podane],
