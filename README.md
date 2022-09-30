@@ -1,7 +1,7 @@
 # What is this?
 This is an app that has been requested by the school to track the exam board.
 # Table of Content:
- -
+ --
 
 ## 1.Requirements:
 - wyznaczać komisje do egzaminów
