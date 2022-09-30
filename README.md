@@ -1,7 +1,7 @@
 # What is this?
 This is an app that has been requested by the school to track the exam board.
 
-## Requierements:
+## Requirements:
 - wyznaczać komisje do egzaminów
 - na pewno dane nauczyciela(imie, nazwisko, nrTel, nauPrzed)
 - wyznacz automatyczne równomiernie nauczycieli z naszej szkoły od komisji
@@ -32,7 +32,7 @@ This is an app that has been requested by the school to track the exam board.
 - przedmioty(nazwaPrzed(ID); Zawodowy [string])[dane podane],
 - komisja(komisjaID; egzaminID; zew_nau_ID;)[wiele do jednego egzaminu],
 - zew_nauczyciel(zew_nau_ID; Imie; Nazwisko; rola[członek/egzaminator])[dodawane przez użytkownika] [?]
-<a href="#">test</a>
+
 
 
 
