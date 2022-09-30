@@ -21,7 +21,7 @@ This is an app that has been requested by the school to track the exam board.
 ### II możliwość
 - wprowadzamy tylko ilość egzaminów konkretnego typu
 - program przydziela tylko nauczycieli z naszej szkoły reszta ręcznie(program tworzy komisję)
-
+### Additional
 - wygenerowany plik pdf z pólą komisji
 
 ## In short:
