@@ -27,11 +27,11 @@ This is an app that has been requested by the school to track the exam board.
 
 ## In short:
 ### Tables:
-egzamin (egzaminID; dataGodzzina [datetime not null]; sala; kwalyfikacja; typ [w, wk, d, dk]; techNauID)[Ręcznie edytowane],
-nauczyciela(nauczycielID; imie; nazwisko; nrTel; nauPrzed)[dane podane],
-przedmioty(nazwaPrzed(ID); Zawodowy [string])[dane podane],
-komisja(komisjaID; egzaminID; zew_nau_ID;)[wiele do jednego egzaminu],
-zew_nauczyciel(zew_nau_ID; Imie; Nazwisko; rola[członek/egzaminator])[dodawane przez użytkownika]
+- egzamin (egzaminID; dataGodzzina [datetime not null]; sala; kwalyfikacja; typ [w, wk, d, dk]; techNauID)[Ręcznie edytowane],
+- nauczyciela(nauczycielID; imie; nazwisko; nrTel; nauPrzed)[dane podane],
+- przedmioty(nazwaPrzed(ID); Zawodowy [string])[dane podane],
+- komisja(komisjaID; egzaminID; zew_nau_ID;)[wiele do jednego egzaminu],
+- zew_nauczyciel(zew_nau_ID; Imie; Nazwisko; rola[członek/egzaminator])[dodawane przez użytkownika]
 
 
 
