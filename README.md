@@ -33,5 +33,8 @@ This is an app that has been requested by the school to track the exam board.
 - zew_nauczyciel(zew_nau_ID; Imie; Nazwisko; rola[członek/egzaminator])[dodawane przez użytkownika] [?]
 
 
+https://www.youtube.com/watch?v=i9-dJXsdFRU&ab_channel=PhpBackAgain
+
+
 
 
