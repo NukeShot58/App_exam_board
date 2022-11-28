@@ -12,7 +12,9 @@ This is an app that has been requested by the school to track the exam board.
 - Praktyka - nauczyciel z zewnątrz(egzaminator albo część komisji [zależnie od egzaminu])
 - komisja 2 osoby(1 przewodniczący nasza szkoła, 2 osoba z zewnątrz[Ręcznie dodawana])
 - ilość członków komisji jako zmienna [2]
-- egzamin (dataGodzzina; sala; kwalyfikacja; typ [w, wk, d, dk])[Ręcznie edytowane] 
+- egzamin (dataGodzzina; sala; 
+    kwalyfikacja; 
+    typ [w, wk, d, dk])[Ręcznie edytowane] 
 - przydziela automatycznie tylko naszych nauczycieli
 - i nauczyciel może być na dwóch sesjach obok siebie [?]
 - jak program wylosuje nauczyciela wchodzimy w edycję egzaminu i dopisujemy ręcznie nauczyciela z zewnątrz; zaznaczamy czy to członek czy egzaminator [Jeżeli brak listy z zewnątrz]
