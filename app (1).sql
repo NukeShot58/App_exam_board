@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 04 Gru 2022, 22:03
+-- Czas generowania: 04 Gru 2022, 22:18
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.1.12
 
@@ -55,6 +55,7 @@ INSERT INTO `egzamin` (`egzaminID`, `dataGodz`, `sala`, `kwalifikacja`, `typ`, `
 --
 
 CREATE TABLE `komisja` (
+  `ID` int(11) NOT NULL,
   `egzaminID` int(11) NOT NULL,
   `nauczycielID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -132,13 +133,16 @@ CREATE TABLE `zew_nauczyciel` (
 --
 ALTER TABLE `egzamin`
   ADD PRIMARY KEY (`egzaminID`),
-  ADD KEY `techNauID` (`techNauID`);
+  ADD KEY `techNauID` (`techNauID`),
+  ADD KEY `zew_nauczyciel` (`zew_nauczyciel`);
 
 --
 -- Indeksy dla tabeli `komisja`
 --
 ALTER TABLE `komisja`
-  ADD PRIMARY KEY (`egzaminID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `egzaminID` (`egzaminID`),
+  ADD KEY `nauczycielID` (`nauczycielID`);
 
 --
 -- Indeksy dla tabeli `nauczyciele`
@@ -176,6 +180,12 @@ ALTER TABLE `egzamin`
   MODIFY `egzaminID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT dla tabeli `komisja`
+--
+ALTER TABLE `komisja`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT dla tabeli `nauczyciele`
 --
 ALTER TABLE `nauczyciele`
@@ -201,7 +211,15 @@ ALTER TABLE `zew_nauczyciel`
 -- Ograniczenia dla tabeli `egzamin`
 --
 ALTER TABLE `egzamin`
-  ADD CONSTRAINT `egzamin_ibfk_1` FOREIGN KEY (`techNauID`) REFERENCES `nauczyciele` (`nauczyciel_ID`);
+  ADD CONSTRAINT `egzamin_ibfk_1` FOREIGN KEY (`techNauID`) REFERENCES `nauczyciele` (`nauczyciel_ID`),
+  ADD CONSTRAINT `egzamin_ibfk_2` FOREIGN KEY (`zew_nauczyciel`) REFERENCES `zew_nauczyciel` (`zew_nau_ID`);
+
+--
+-- Ograniczenia dla tabeli `komisja`
+--
+ALTER TABLE `komisja`
+  ADD CONSTRAINT `komisja_ibfk_1` FOREIGN KEY (`egzaminID`) REFERENCES `egzamin` (`egzaminID`),
+  ADD CONSTRAINT `komisja_ibfk_2` FOREIGN KEY (`nauczycielID`) REFERENCES `nauczyciele` (`nauczyciel_ID`);
 
 --
 -- Ograniczenia dla tabeli `nauczyciele`
