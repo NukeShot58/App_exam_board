@@ -15,7 +15,7 @@
     <section class="main">
         <section class="form">
         <h2>Dodaj egzaminy</h2>
-        <form action="" method="post">
+        <form action="send_data.php" method="post">
             <Label>Ilość egzaminów:</Label>
             <input type="number" name="egzIl" id="">
             <Label>Typ egzaminu:</Label>
@@ -25,7 +25,22 @@
                 <option value="d">d</option>
                 <option value="dk">dk</option>
             </select>
+            <select name="egzKwal" id="">
+                <option value="inf.03">inf.03</option>
+                <option value="inf.02">inf.02</option>
+            </select>
+            <input type="submit" value="Add">
         </form>
+        <?php
+        if(isset($_SESSION['error_send'])):
+        ?>
+        <div class='error'><?php
+        echo($_SESSION['error_send']);
+        unset($_SESSION['error_send']);
+        ?></div>
+        <?php
+        endif;
+        ?>
         </section>
         <section class="form">
             <h2>Edytuj egzaminy</h2>

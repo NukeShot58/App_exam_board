@@ -14,13 +14,14 @@
         <form action="" method="post">
             <input type="text" name="login" id="">
             <input type="password" name="pass" id="">
-            <input type="button" name='login' value="Zaloguj">
+            <input type="submit" value="Zaloguj">
         </form>
     </section>
     <?php 
     if(isset($_POST['login'])) {
-        if(!is_null($_POST[''] || !is_null($_POST[] ))
+        //if(!is_null($_POST[''] || !is_null($_POST[] ))
     }
+    
     ?>
 </body>
 </html>
