@@ -1,5 +1,8 @@
 <?php 
     session_start();
+    if(!isset($_SESSION['login'])){
+    header('Location: index.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +14,13 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="header"></section>
+    <section class="header"><h2>Zalogowany jako: <?php
+    if (isset($_SESSION['login'])) {
+        echo $_SESSION['login'];
+    }
+    ?></h2>
+    <a href="logout.php">Wyloguj</a>    
+</section>
     <section class="main">
         <section class="form">
         <h2>Dodaj egzaminy</h2>
@@ -65,6 +74,7 @@
                 $conn->close();
             }catch(mysqli_sql_exception $e){
                 echo "<div class='error'>" . $e . "</div>";
+                unset($e);
             }
 
             ?>

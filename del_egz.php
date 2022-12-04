@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['login'])){
+    header('Location: index.php');
+    }
 ?>
 <?php
 require_once('conn.php');
@@ -12,6 +15,7 @@ try{
     exit();
 }catch(mysqli_sql_exception $e){
     header('Location: page.php');
+    $conn->close();
     exit();
 }
 ?>

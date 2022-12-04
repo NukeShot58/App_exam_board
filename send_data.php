@@ -1,5 +1,8 @@
 <?php 
 session_start();
+if(!isset($_SESSION['login'])){
+    header('Location: index.php');
+    }
 ?>
 <?php
 
@@ -35,6 +38,7 @@ try{
 }catch(mysqli_sql_exception $e){
     $_SESSION['error_send'] = $e;
     header('Location: page.php');
+    $conn->close();
     exit();
 }
 ?>

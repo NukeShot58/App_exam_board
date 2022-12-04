@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 04 Gru 2022, 19:00
--- Wersja serwera: 10.4.17-MariaDB
--- Wersja PHP: 8.0.2
+-- Czas generowania: 04 Gru 2022, 22:03
+-- Wersja serwera: 10.4.27-MariaDB
+-- Wersja PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `examboard_test`
+-- Baza danych: `app`
 --
 
 -- --------------------------------------------------------
@@ -35,7 +35,18 @@ CREATE TABLE `egzamin` (
   `typ` tinytext NOT NULL,
   `techNauID` int(11) DEFAULT NULL,
   `zew_nauczyciel` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `egzamin`
+--
+
+INSERT INTO `egzamin` (`egzaminID`, `dataGodz`, `sala`, `kwalifikacja`, `typ`, `techNauID`, `zew_nauczyciel`) VALUES
+(3, NULL, NULL, 'inf.03', 'w', NULL, NULL),
+(4, NULL, NULL, 'inf.03', 'w', NULL, NULL),
+(5, NULL, NULL, 'inf.02', 'dk', NULL, NULL),
+(6, NULL, NULL, 'inf.03', 'd', NULL, NULL),
+(7, NULL, NULL, 'inf.03', 'd', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -46,7 +57,7 @@ CREATE TABLE `egzamin` (
 CREATE TABLE `komisja` (
   `egzaminID` int(11) NOT NULL,
   `nauczycielID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -60,7 +71,7 @@ CREATE TABLE `nauczyciele` (
   `nazwisko` varchar(45) NOT NULL,
   `nr_tel` int(9) UNSIGNED NOT NULL,
   `id_przed` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -71,7 +82,7 @@ CREATE TABLE `nauczyciele` (
 CREATE TABLE `przedmiot` (
   `nazwaPrzed` varchar(45) NOT NULL,
   `zawdowy` text NOT NULL DEFAULT '"nie"'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Zrzut danych tabeli `przedmiot`
@@ -79,6 +90,25 @@ CREATE TABLE `przedmiot` (
 
 INSERT INTO `przedmiot` (`nazwaPrzed`, `zawdowy`) VALUES
 ('Programowanie obiektowe', 'tak');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `login` varchar(45) NOT NULL,
+  `haslo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `users`
+--
+
+INSERT INTO `users` (`id`, `login`, `haslo`) VALUES
+(1, 'test', '$2y$10$Gfj7FgO9V9p8oolTYZb.Vuu0eWoFkhx8/nwDWTnzXVbOIyMEJwdiG');
 
 -- --------------------------------------------------------
 
@@ -91,7 +121,7 @@ CREATE TABLE `zew_nauczyciel` (
   `imie` varchar(45) NOT NULL,
   `nazwisko` varchar(45) NOT NULL,
   `rola` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indeksy dla zrzutów tabel
@@ -124,6 +154,12 @@ ALTER TABLE `przedmiot`
   ADD PRIMARY KEY (`nazwaPrzed`);
 
 --
+-- Indeksy dla tabeli `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `zew_nauczyciel`
 --
 ALTER TABLE `zew_nauczyciel`
@@ -137,13 +173,19 @@ ALTER TABLE `zew_nauczyciel`
 -- AUTO_INCREMENT dla tabeli `egzamin`
 --
 ALTER TABLE `egzamin`
-  MODIFY `egzaminID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `egzaminID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `nauczyciele`
 --
 ALTER TABLE `nauczyciele`
   MODIFY `nauczyciel_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT dla tabeli `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `zew_nauczyciel`
