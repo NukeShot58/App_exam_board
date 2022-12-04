@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Lis 2022, 22:44
+-- Czas generowania: 04 Gru 2022, 19:00
 -- Wersja serwera: 10.4.17-MariaDB
 -- Wersja PHP: 8.0.2
 
@@ -31,10 +31,9 @@ CREATE TABLE `egzamin` (
   `egzaminID` int(11) NOT NULL,
   `dataGodz` datetime DEFAULT NULL,
   `sala` varchar(10) DEFAULT NULL,
-  `kwalifikacja` varchar(10) DEFAULT NULL,
+  `kwalifikacja` varchar(10) NOT NULL,
   `typ` tinytext NOT NULL,
   `techNauID` int(11) DEFAULT NULL,
-  `ilCzlonKomis` int(10) UNSIGNED DEFAULT 2,
   `zew_nauczyciel` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

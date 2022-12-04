@@ -44,6 +44,30 @@
         </section>
         <section class="form">
             <h2>Edytuj egzaminy</h2>
+            <?php
+            require_once('conn.php');
+            try{
+                $conn = new mysqli($hostname, $username, $password, $dbname);
+                $sql = "select * from egzamin;";
+                $result = $conn->query($sql);
+                if($result->num_rows > 0){
+                    echo '<table border=1><tr><th>id</th><th>dataGodz</th><th>sala</th><th>klasyfikacja</th><th>typ</th><th>Techniczny nauczyciel</th><th>Zewnętrzny nauczyciel</th><th>Usuń</th><th>Edytuj</th></tr>';
+                    while($rekord = $result->fetch_array(MYSQLI_ASSOC)){
+                        echo '<tr>';
+                        foreach($rekord as $element){
+                            echo '<td>' . $element . '</td>';
+                        }
+                        echo ('<td><form method="post" action="del_egz.php"><input type="hidden" name="id" value="' . $rekord['egzaminID'] . '"><input type="submit" value="Usuń"></form></td>');
+                        echo ('</tr>');
+                    }
+                    echo '</table>';
+                }
+                $conn->close();
+            }catch(mysqli_sql_exception $e){
+                echo "<div class='error'>" . $e . "</div>";
+            }
+
+            ?>
             
         </section>
     </section>
