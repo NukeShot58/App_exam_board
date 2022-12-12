@@ -5,7 +5,7 @@ if(!isset($_SESSION['login'])){
     }
 ?>
 <?php
-$kom_IL = 2;
+// $kom_IL = 2;
 if(!isset($_POST['egzIl'])){
     if(empty($_POST['egzIl'])){
         $_SESSION['error_send'] = 'Podaj ilość egzaminów';
