@@ -67,6 +67,7 @@
                             echo '<td>' . $element . '</td>';
                         }
                         echo ('<td><form method="post" action="del_egz.php"><input type="hidden" name="id" value="' . $rekord['egzaminID'] . '"><input type="submit" value="Usuń"></form></td>');
+                        echo ('<td><form method="post" action="edit_gui.php"><input type="hidden" name="id" value="' . $rekord['egzaminID'] . '"><input type="submit" value="Edytuj"></form></td>');
                         echo ('</tr>');
                     }
                     echo '</table>';
